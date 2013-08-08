@@ -1,4 +1,4 @@
 # This is a placeholder class.
-class template {
+class mac_integration {
   anchor { 'Hello_World': }
 }
