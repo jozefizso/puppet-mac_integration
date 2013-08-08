@@ -1,4 +1,7 @@
 # This is a placeholder class.
 class mac_integration {
-  anchor { 'Hello_World': }
+  file { "/Users/${::boxen_user}/.puppet-mac_integration":
+    ensure  => 'file',
+    content => 'integration test'
+  }
 }
