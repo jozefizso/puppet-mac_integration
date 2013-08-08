@@ -10,4 +10,5 @@ PUPPET_ARGS="--modulepath=$MODULE_PATH --verbose"
 SITE_FILE=spec/fixtures/manifests/site.pp
 # [ "cibuild" = "$SCRIPT" ] && BUNDLE_ARGS="$BUNDLE_ARGS --no-quiet"
 
+bundle exec cardboard bootstrap
 bundle exec puppet apply $PUPPET_ARGS $SITE_FILE
