@@ -12,12 +12,12 @@ SCRIPT=$(basename "$0")
 BUNDLE_ARGS="--binstubs $BIN --path $BUNDLE --quiet"
 [ "cibuild" = "$SCRIPT" ] && BUNDLE_ARGS="$BUNDLE_ARGS --no-quiet"
 
+MODULE_PATH=spec/fixtures/modules
+PUPPET_ARGS="--modulepath=$MODULE_PATH --verbose"
+SITE_FILE=spec/fixtures/manifests/site.pp
+
 rm -rf {$BIN,$BUNDLE/config}
 bundle install $BUNDLE_ARGS
 
 bundle exec cardboard bootstrap
-
-MODULE_PATH=spec/fixtures/modules
-PUPPET_ARGS="--modulepath=$MODULE_PATH --verbose"
-SITE_FILE=spec/fixtures/manifests/site.pp
-bundle exec puppet apply $PUPPET_ARGS $SITE_FILE
+exec bundle exec puppet apply $PUPPET_ARGS $SITE_FILE
