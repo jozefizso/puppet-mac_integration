@@ -1,7 +1,6 @@
 ---
 language: objective-c
-script: ./script/puppet-apply
-after_script: cat ~/.puppet-mac_integration
+script: sudo ./script/puppet-apply
 gemfile: this/does/not/exist
 rvm:
   - system
