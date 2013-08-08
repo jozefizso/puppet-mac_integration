@@ -4,7 +4,7 @@ script: ./script/puppet-apply
 after_script: cat ~/.puppet-mac_integration
 gemfile: this/does/not/exist
 rvm:
-  # - 1.8.7
+  - system
   - 1.9.3
 env:
   global:
