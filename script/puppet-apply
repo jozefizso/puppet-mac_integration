@@ -20,4 +20,4 @@ rm -rf {$BIN,$BUNDLE/config}
 bundle install $BUNDLE_ARGS
 
 bundle exec cardboard bootstrap
-exec bundle exec puppet apply $PUPPET_ARGS $SITE_FILE || exit 1
+bundle exec puppet apply $PUPPET_ARGS $SITE_FILE
